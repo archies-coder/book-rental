@@ -1,0 +1,42 @@
+# books API
+
+###
+# baseURL
+@baseURL = http://localhost:5000
+
+###
+# Find All Books
+GET {{baseURL}}/books
+
+###
+# Find User By Id
+GET {{baseURL}}/books/1
+
+
+###
+# Add User
+POST {{baseURL}}/books
+Content-Type: application/json
+
+{
+    "title": "How to not give a fuck",
+	"description": "Live your life on your fucking terms",
+    "author": "Archie B",
+    "availableQuantity": 124,
+    "price": 600,
+    "rentPerDay": 10
+}
+
+###
+# Edit User By Id
+PUT {{baseURL}}/books/1
+Content-Type: application/json
+
+{
+    "email": "example@gmail.com",
+	"password": "qwer1234"
+}
+
+###
+# Del User By Id
+DELETE {{baseURL}}/books/1
