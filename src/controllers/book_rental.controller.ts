@@ -1,12 +1,15 @@
 import { Request, Response } from 'express'
 import BookRentalService from '../services/book_rental.service'
 import { RentBookDto } from '../dtos/book_rental.dto'
+import { logger } from '../utils/logger'
 
 export default class BookRentalController {
   private bookRental = new BookRentalService()
 
   public rentBook = async (req: Request, res: Response): Promise<void> => {
     const body: RentBookDto = req.body
+
+    logger.info(body.rentalStartDate, body.returnDate)
 
     const rentedBook = await this.bookRental.rentBook(body)
 

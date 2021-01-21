@@ -16,3 +16,11 @@ export class CreateUserDto {
   @IsString()
   public phoneNumber: string
 }
+
+export class LoginDto {
+  @IsEmail()
+  email: string
+
+  @IsString()
+  password: string
+}

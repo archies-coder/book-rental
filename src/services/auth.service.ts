@@ -1,3 +1,4 @@
+import { LoginDto } from './../dtos/users.dto'
 import { getRepository } from 'typeorm'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
@@ -23,7 +24,7 @@ class AuthService {
     return createUserData
   }
 
-  public async login(userData: CreateUserDto): Promise<{ cookie: string; findUser: User }> {
+  public async login(userData: LoginDto): Promise<{ cookie: string; findUser: User }> {
     if (isEmpty(userData)) throw new HttpException(400, "You're not userData")
 
     const userRepository = getRepository(this.users)

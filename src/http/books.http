@@ -22,7 +22,7 @@ Content-Type: application/json
     "title": "How to not give a fuck",
 	"description": "Live your life on your fucking terms",
     "author": "Archie B",
-    "availableQuantity": 124,
+    "availableQuantity": 4,
     "price": 600,
     "rentPerDay": 10
 }

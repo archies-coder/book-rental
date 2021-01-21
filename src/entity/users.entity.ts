@@ -2,29 +2,29 @@ import { Entity, PrimaryGeneratedColumn, Column, Unique, CreateDateColumn, Updat
 import { IsNotEmpty } from 'class-validator'
 import { User } from '../interfaces/users.interface'
 
-@Entity()
+@Entity({ name: 'USER_DETAILS' })
 @Unique(['email'])
 export class UserEntity implements User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ name: 'USER_ID' })
   userId: number
 
-  @Column()
+  @Column({ name: 'EMAIL' })
   @IsNotEmpty()
   email: string
 
-  @Column()
+  @Column({ name: 'PASSWORD' })
   @IsNotEmpty()
   password: string
 
-  @Column()
+  @Column({ name: 'CITY' })
   @IsNotEmpty()
   city: string
 
-  @Column()
+  @Column({ name: 'GENDER' })
   @IsNotEmpty()
   gender: string
 
-  @Column()
+  @Column({ name: 'PHONE_NUMBER' })
   @IsNotEmpty()
   phoneNumber: string
 

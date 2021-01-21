@@ -1,27 +1,27 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 import { Book } from '../interfaces/book.interface'
 
-@Entity()
+@Entity({ name: 'BOOK' })
 export class BookEntity implements Book {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ name: 'BOOK_ID' })
   bookId: number
 
-  @Column()
+  @Column({ name: 'TITLE' })
   title: string
 
-  @Column()
+  @Column({ name: 'DESCRIPTION' })
   description: string
 
-  @Column()
+  @Column({ name: 'AVAILABLE_QUANTITY' })
   availableQuantity: number
 
-  @Column()
+  @Column({ name: 'AUTHOR' })
   author: string
 
-  @Column()
+  @Column({ name: 'PRICE' })
   price: number
 
-  @Column()
+  @Column({ name: 'RENT_PER_DAY' })
   rentPerDay: number
 
   @Column()

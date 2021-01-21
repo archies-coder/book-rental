@@ -8,7 +8,7 @@ export class CreateBookDto {
   description: string
 
   @IsNumber()
-  availilableQuantity: number
+  availableQuantity: number
 
   @IsString()
   author: string

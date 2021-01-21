@@ -43,6 +43,7 @@ export default class BookRentalEntity implements BookRental {
 
   @Column({
     name: 'RETURN_DATE',
+    nullable: true,
   })
   @IsNotEmpty()
   returnDate: Date

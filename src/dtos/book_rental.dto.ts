@@ -1,4 +1,4 @@
-import { IsBoolean, IsDate, IsNumber } from 'class-validator'
+import { IsBoolean, IsDate, IsNumber, IsString } from 'class-validator'
 
 export class RentBookDto {
   @IsNumber()
@@ -10,11 +10,11 @@ export class RentBookDto {
   @IsNumber()
   quantity: number
 
-  @IsDate()
-  renalStartDate: Date
+  @IsString()
+  rentalStartDate: string
 
-  @IsDate()
-  rentalEndDate: Date
+  @IsString()
+  rentalEndDate: string
 
   @IsNumber()
   totalAmount: number
@@ -22,6 +22,6 @@ export class RentBookDto {
   @IsBoolean()
   isReturned: boolean
 
-  @IsDate()
-  returnDate?: Date
+  @IsString()
+  returnDate?: string
 }

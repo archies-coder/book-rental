@@ -1,0 +1,24 @@
+
+## Rent Book
+@baseURL = http://localhost:5000
+
+###
+## Return a Book
+GET {{baseURL}}/book-rental/returns/2
+
+
+###
+## Rent Book
+POST {{baseURL}}/book-rental
+Content-Type: application/json
+
+{
+      "userId": 1,
+  "bookId": 1,
+  "quantity": 1,
+  "rentalStartDate": "2021-01-21 01:53:39.408598",
+  "rentalEndDate": "2021-01-25 01:53:39.408598",
+  "totalAmount": 20,
+  "isReturned": false
+}
+
