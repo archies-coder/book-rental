@@ -1,13 +1,13 @@
-// import request from 'supertest';
-// import App from '../app';
-// import { User } from '../interfaces/users.interface';
+import request from 'supertest'
+import App from '../app'
+import { User } from '../interfaces/users.interface'
 // import userModel from '../models/users.model';
-// import UserRoute from '../routes/users.route';
-// import { CreateUserDto } from '../dtos/users.dto';
+import UserRoute from '../routes/users.route'
+import { CreateUserDto } from '../dtos/users.dto'
 
-// afterAll(async () => {
-//   await new Promise<void>(resolve => setTimeout(() => resolve(), 500));
-// });
+afterAll(async () => {
+  await new Promise<void>(resolve => setTimeout(() => resolve(), 500))
+})
 
 // describe('Testing Users', () => {
 //   describe('[GET] /users', () => {
@@ -44,19 +44,22 @@
 //     });
 //   });
 
-//   describe('[PUT] /users/:id', () => {
-//     it('response statusCode 200 / updated', async () => {
-//       const userId = 1;
-//       const userData: CreateUserDto = {
-//         email: 'lim@gmail.com',
-//         password: '1q2w3e4r',
-//       };
-//       const usersRoute = new UserRoute();
-//       const app = new App([usersRoute]);
+describe('[PUT] /users/:id', () => {
+  it('response statusCode 200 / updated', async () => {
+    const userId = 1
+    const userData: CreateUserDto = {
+      email: 'lim@gmail.com',
+      password: '1q2w3e4r',
+      city: 'mumbai',
+      gender: 'male',
+      phoneNumber: '123',
+    }
+    const usersRoute = new UserRoute()
+    const app = new App([usersRoute])
 
-//       return request(app.getServer()).put(`${usersRoute.path}/${userId}`).send(userData).expect(200);
-//     });
-//   });
+    return request(app.getServer()).put(`${usersRoute.path}/${userId}`).send(userData).expect(200)
+  })
+})
 
 //   describe('[DELETE] /users/:id', () => {
 //     it('response statusCode 200 / deleted', () => {

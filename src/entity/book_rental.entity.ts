@@ -49,12 +49,6 @@ export default class BookRentalEntity implements BookRental {
   returnDate: Date
 
   @Column({
-    name: 'TOTAL_AMOUNT',
-  })
-  @IsNotEmpty()
-  totalAmount: number
-
-  @Column({
     name: 'USER_ID',
   })
   @IsNotEmpty()

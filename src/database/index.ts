@@ -1,6 +1,6 @@
-import { ConnectionOptions } from 'typeorm';
+import { ConnectionOptions } from 'typeorm'
 
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development'
 const dbConnection: ConnectionOptions = {
   type: 'mysql',
   host: process.env.POSTGRESQL_HOST,
@@ -18,6 +18,6 @@ const dbConnection: ConnectionOptions = {
     migrationsDir: 'src/migration',
     subscribersDir: 'src/subscriber',
   },
-};
+}
 
-export { dbConnection };
+export { dbConnection }

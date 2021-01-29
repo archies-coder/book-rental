@@ -1,5 +1,6 @@
+import { UpdateBookDto } from './../dtos/books.dto'
 import { isEmpty } from 'class-validator'
-import { getRepository, Repository } from 'typeorm'
+import { getRepository } from 'typeorm'
 import { CreateBookDto } from '../dtos/books.dto'
 import { BookEntity } from '../entity/book.entity'
 import HttpException from '../exceptions/HttpException'
@@ -13,7 +14,7 @@ export default class BookService {
     return books
   }
 
-  public async findBookById(id: string): Promise<Book> {
+  public async findBookById(id: number): Promise<Book> {
     const book: Book = await getRepository(this.books).findOne(id)
     return book
   }
@@ -25,7 +26,7 @@ export default class BookService {
     return book
   }
 
-  public async updateBook(bookId: number, bookData: CreateBookDto): Promise<Book> {
+  public async updateBook(bookId: number, bookData: UpdateBookDto): Promise<Book> {
     if (isEmpty(bookData)) throw new HttpException(400, "You're not bookData")
 
     await getRepository(this.books).update(bookId, bookData)

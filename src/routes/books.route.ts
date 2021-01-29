@@ -17,7 +17,7 @@ class BooksRoute implements Route {
     this.router.get(`${this.path}`, BooksRoute.booksController.getBooks)
     // this.router.get(`${this.path}/:id(\\d+)`, this.booksController.getBookById)
     this.router.post(`${this.path}`, validationMiddleware(CreateBookDto, 'body'), BooksRoute.booksController.createBook)
-    // this.router.put(`${this.path}/:id(\\d+)`, validationMiddleware(CreateBookDto, 'body', true), this.booksController.updateBook)
+    this.router.put(`${this.path}/:id(\\d+)`, validationMiddleware(CreateBookDto, 'body', true), BooksRoute.booksController.updatebook)
     // this.router.delete(`${this.path}/:id(\\d+)`, this.booksController.deleteBook)
   }
 }

@@ -18,7 +18,6 @@ Content-Type: application/json
   "quantity": 1,
   "rentalStartDate": "2021-01-21 01:53:39.408598",
   "rentalEndDate": "2021-01-25 01:53:39.408598",
-  "totalAmount": 20,
   "isReturned": false
 }
 

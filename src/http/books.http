@@ -9,6 +9,10 @@
 GET {{baseURL}}/books
 
 ###
+# Find All Books pagination
+GET {{baseURL}}/books?p=0
+
+###
 # Find User By Id
 GET {{baseURL}}/books/1
 
@@ -19,7 +23,21 @@ POST {{baseURL}}/books
 Content-Type: application/json
 
 {
-    "title": "How to not give a fuck",
+    "title": "How to not give a fuck 12",
+	"description": "Live your life on your fucking terms",
+    "author": "Archie B",
+    "availableQuantity": 4,
+    "price": 600,
+    "rentPerDay": 10
+}
+
+###
+# Update User
+PUT {{baseURL}}/books/1
+Content-Type: application/json
+
+{
+    "title": "How to not give a fuck updated",
 	"description": "Live your life on your fucking terms",
     "author": "Archie B",
     "availableQuantity": 4,
@@ -40,3 +58,9 @@ Content-Type: application/json
 ###
 # Del User By Id
 DELETE {{baseURL}}/books/1
+
+
+
+{
+    "title": "Some Updated Title"
+}

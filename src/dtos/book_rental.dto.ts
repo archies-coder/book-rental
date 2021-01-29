@@ -16,9 +16,6 @@ export class RentBookDto {
   @IsString()
   rentalEndDate: string
 
-  @IsNumber()
-  totalAmount: number
-
   @IsBoolean()
   isReturned: boolean
 
